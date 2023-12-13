@@ -1,0 +1,22 @@
+*{
+    margin: 2px;
+}
+
+button{
+    padding: 50px;
+   
+    color: blue;
+    background-color: #e7e7e7;
+}
+
+.span1{
+    text-align: center;
+    margin-left: 600px;
+    margin-right: 620px;
+}
+select{
+    width: 100%;
+    border: 1px solid black;
+    padding: 5px;
+   
+}
