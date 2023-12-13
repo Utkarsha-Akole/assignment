@@ -13,11 +13,11 @@ const WeeklySchedule = () => {
   }, [currentDate, timezone]);
 
   const updateWeeklyData = () => {
-    // Use moment-timezone library to handle timezones
+    
     const startDate = currentDate.clone().startOf('week').tz(timezone);
     const endDate = currentDate.clone().endOf('week').tz(timezone);
 
-    // Filter data for the current week
+    
     const filteredData = scheduleData.filter((item) => {
       const itemDate = moment.tz(item.Date + ' ' + item.Time, timezone);
       return itemDate.isBetween(startDate, endDate, null, '[]');
@@ -34,14 +34,7 @@ const WeeklySchedule = () => {
   const handleTimezoneChange = (selectedTimezone) => {
     setTimezone(selectedTimezone);
   };
-//   const renderSchedule = () => {
-//     // Render the schedule UI with checkboxes for each day and date
-//     return scheduleData.map((entry) => (
-//       <div key={entry.Id}>
-//         <input type="checkbox" /> {moment.tz(entry.Date + ' ' + entry.Time, timezone).format('dddd, MMMM D')}
-//       </div>
-//     ));
-//   };
+
   return (
     <div>
       <div>
@@ -53,11 +46,11 @@ const WeeklySchedule = () => {
         <label>Timezone:</label><br></br>
         <select onChange={(e) => handleTimezoneChange(e.target.value)}>
           <option value="UTC">UTC</option>
-          <option value="America/New_York">America/New_York</option> {/* Change to your desired timezone */}
-        </select>
+          <option value="America/New_York">America/New_York</option> 
+         </select>
       </div>
       <div>
-        {/* Display weekly schedule with checkboxes */}
+        
         {weeklyData.map((item) => (
           <div key={item.Id}>
             <label>
@@ -70,11 +63,6 @@ const WeeklySchedule = () => {
         ))}
       </div>
     </div>
-
-
-
-
-    
   );
 };
 
