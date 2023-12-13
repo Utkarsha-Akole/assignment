@@ -63,7 +63,7 @@ const WeeklySchedule = () => {
             <label>
          
               {moment.tz(item.Date + ' ' + item.Time, timezone).format('ddd, MM/D')}&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" /> 
+              <input type="checkbox" />
               {item.Time}
             </label>
           </div>
